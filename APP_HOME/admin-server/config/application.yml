@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: admin-server
+  boot:
+    admin:
+      discovery:
+        converter:
+          management-context-path: /manage
+
+server:
+  port: 9001
+
+eureka:
+  instance:
+    statusPageUrlPath: /manage/info
+    healthCheckUrlPath: /manage/health
+    leaseRenewalIntervalInSeconds: 10
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+       defaultZone: http://localhost:9000/eureka
+ 
+management:
+  context-path: /manage 
+  security:
+    enabled: false    
+
+endpoints:
+  sensitive: true
+  shutdown:
+    enabled: true
+  restart:
+    enabled: true
+      
+logging: 
+  config: ${app.home}/${spring.application.name}/config/logback.xml

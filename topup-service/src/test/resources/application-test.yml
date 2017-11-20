@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: topup-service
+
+server:
+  address: localhost
+  port: 8080
+  
+eureka:
+  client:
+    fetchRegistry: true
+    enabled: false
+        
+stubrunner:
+  workOffline: true
+  idsToServiceIds:
+    sms-service: sms-service 
+    
+logging:
+  level:
+    root: INFO
+    
+ 
+ 
