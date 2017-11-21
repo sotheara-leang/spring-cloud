@@ -25,4 +25,4 @@ endpoints:
     enabled: true
          
 logging: 
-  config: ${app.home}/${spring.application.name}/config/logback.xml
+  config: ${APP_HOME}/${spring.application.name}/config/logback.xml
