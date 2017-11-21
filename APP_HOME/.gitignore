@@ -1,1 +1,4 @@
 /.project
+/dashboard-server/
+/.gradle/
+/.settings/

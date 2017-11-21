@@ -1,6 +1,8 @@
 dependencies {
 	compile 'org.springframework.cloud:spring-cloud-starter-eureka'
 	
+	compile 'org.springframework.boot:spring-boot-starter-mail'
+	
 	compile 'de.codecentric:spring-boot-admin-server:1.5.5'
 	compile 'de.codecentric:spring-boot-admin-server-ui:1.5.5'
 }

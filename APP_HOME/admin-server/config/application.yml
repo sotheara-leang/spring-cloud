@@ -3,10 +3,27 @@ spring:
     name: admin-server
   boot:
     admin:
+      notify:
+        mail:
+          from: sothearatest@gmail.com
+          to: leangsotheara@gmail.com
       discovery:
+        ignoredServices: 
+          admin-server
         converter:
-          management-context-path: /manage
-
+          managementContextPath: /manage
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: sothearatest@gmail.com
+    password: thearaitc2017
+    properties:
+      mail.smtp:
+        auth: true
+        starttls.enable: true
+        starttls.required: true
+        ssl.trust: smtp.gmail.com
+      
 server:
   port: 9001
 
