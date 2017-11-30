@@ -15,7 +15,7 @@ import com.example.springcloud.topup.service.TopUpService;
 import com.example.springcloud.topup.web.vo.TopUp_Req;
 import com.example.springcloud.topup.web.vo.TopUp_Res;
 
-@RestController
+@RestController("/api/topup")
 public class TopUpRestController {
 	
 	@Autowired
@@ -24,7 +24,7 @@ public class TopUpRestController {
 	@Autowired
 	private SmsService smsService;
 
-	@PostMapping ("/topup")
+	@PostMapping
 	public TopUp_Res topUp(@RequestBody TopUp_Req topUp_Req) throws RestClientException, URISyntaxException {
 		TopUpDto topUpDto = new TopUpDto();
 		topUpDto.setAccountNo(topUp_Req.getAccountNo());

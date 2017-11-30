@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+      - id: simple
+        uri: http://www.google.com:80
+        predicates:
+        - Path=/google
+      - id: topup-service
+        uri: lb://topup-service
+        predicates:
+        - Path=/api/topup
+
+server:
+  port: 9002
+  
+eureka:
+  instance:
+    statusPageUrlPath: /manage/info
+    healthCheckUrlPath: /manage/health
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+       defaultZone: http://localhost:9000/eureka
+
+management:
+  context-path: /manage 
+  security:
+    enabled: false    
+    
+endpoints:
+  sensitive: true
+  shutdown:
+    enabled: true
+  restart:
+    enabled: true
+    
+logging: 
+  config: ${APP_HOME}/${spring.application.name}/config/logback.xml
+ 

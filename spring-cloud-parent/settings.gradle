@@ -1,3 +1,3 @@
 rootProject.name = 'spring-cloud-parent'
 
-includeFlat 'eureka-server', 'admin-server', 'sms-service', 'topup-service'
+includeFlat 'eureka-server', 'admin-server', 'api-gateway', 'sms-service', 'topup-service'
